@@ -1,0 +1,97 @@
+:root {
+    --turquesa: #6AB8EE;
+    --menta: #B4F8C8;
+    --oro: #FEDE00;
+   --celeste: #a7c9f2;
+    --azul: #1396E9;
+
+    --main: var(--turquesa);
+}
+
+body, html {
+    height: 100%;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.main {
+    background-color: white;
+    padding: 1.7rem;
+    border-radius: 5px;
+}
+
+.background {
+    background-image: url(../img/fondocolores.jpg);
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    padding: 2rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Formulario */
+/* Style inputs with type="text", select elements and textareas */
+input[type=text], select, textarea {
+  width: 100%; 
+  padding: 0.5rem 1rem; 
+  border: 1px solid #ccc; 
+  border-radius: 4px; 
+  box-sizing: border-box;
+  margin-top: 0.6rem; 
+  margin-bottom: 1.5rem; 
+  resize: vertical;
+}
+
+/* Style the submit button with a specific background color etc */
+input[type=submit] {
+  background-color: var(--azul);
+  color: var(--menta);
+  padding: 12px 20px;
+  margin: 0 0 10px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  position: relative;
+  left: 50%;
+}
+
+input[type=submit]:hover { /* uso de efectos en el boton*/
+  background-color: var(--celeste);
+  color: var(--azul);
+}
+
+.container-form {
+  /* centrar facilmente */
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+
+  border-radius: 5px;
+  padding: 2rem;
+}

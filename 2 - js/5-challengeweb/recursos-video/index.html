@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Antony Ureta, Alvaro Esteban Herrera" />
+    <meta
+      name="copyright"
+      content="Propiedad intelectual de Antony Ureta, de uso estrictamente open source"
+    />
+    <meta name="robots" content="index" />
+    <title>Larnu play</title>
+    <link rel="stylesheet" href="styles/style.css" />
+    <link
+      rel="shortcut icon"
+      href="./img/larnu_favicon.png"
+      type="image/x-icon"
+    />
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="container__nav">
+        <nav class="container__nav--nav">
+          <header>
+            <img
+              class="nav__logo"
+              src="./img/larnu_logo.png"
+              alt="Logo LarnU"
+            />
+          </header>
+          <ul>
+            <li>
+              <select name="select" class="select__item">
+                <option value="all" selected>Mostrar todo</option>
+                <option value="html">Curso de html</option>
+                <option value="css">Curso de css</option>
+                <option value="js">Curso de js</option>
+              </select>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <!--Redirigir a recursos-enlaces-->
+      <main class="container__main">
+        <div class="container__Course left">
+          <div class="container__filter" style="margin-bottom: 20px;">
+            <input type="text"  name="" id="filter" class="filter" placeholder="Buscar" onkeyup="searchResource()">
+          </div>
+          
+          <div class="container__cards" id="container__cards"></div>
+        </div>
+      </main>
+    </div>
+  </body>
+  <script src="./js/fakeapi.js"></script>
+</html>

@@ -1,0 +1,10 @@
+Pagina que contenga
+- Home
+- About
+- Contact
+    . El contact posee un formulario
+
+
+___
+
+La pagina para presentar mis proyectos de enseñanza y que funcione como una guia.

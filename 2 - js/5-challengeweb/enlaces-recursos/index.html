@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:
+  wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <title>Enlaces-busqueda</title>
+</head>
+
+<body>
+  <div class="header">
+    <img src="img/logo.png" alt="logo larnu" class="header_logo">
+    <h2>Recursos-Enlaces</h2>
+    <button class="header_button">Tipo</button>
+    <!--Redirigir a recursos-videos-->
+  </div>
+  <div class="searcher">
+    <input type="search" placeholder="🔎 Buscar..." class="recursos--filter">
+  </div>
+  <div class="resources">
+    <div class="resources_card">
+      <img src="https://midu.dev/images/wallpapers/javascript-grande-horizontal-4k.png" alt="imagen recurso">
+      <a href="https://jonmircha.com/">
+        <h3 class="resources_titulo">Mejor youtuber JS</h3>
+      </a>
+      <p class="resources_descripcion">"Lo mejor que he visto de JS youtube"</p>
+      <div class="resources--center_buttons">
+        <p class="counter_positive" id="countPositive1">0</p>
+        <button class="resources_button" id="buttonIncrese1">👍</button>
+        <p class="counter_negative" id="countNegative1">0</p>
+        <button class="resources_button" id="buttonNegative1">👎</button>
+      </div>
+    </div>
+    <div class="resources_card">
+      <img src="https://i.ytimg.com/vi/ZR2hs726h74/maxresdefault.jpg" alt="imagen recurso">
+      <a href="https://www.codewars.com/">
+        <h3 class="resources_titulo">Codewars</h3>
+      </a>
+      <p class="resources_descripcion">"Sitio de desafios de codigo como katas"</p>
+      <div class="resources--center_buttons">
+        <p class="counter_positive" id="countPositive2">0</p>
+        <button class="resources_button" id="buttonIncrese2">👍</button>
+        <p class="counter_negative" id="countNegative2">0</p>
+        <button class="resources_button" id="buttonNegative2">👎</button>
+      </div>
+    </div>
+    <div class="resources_card">
+      <img src="https://images.unsplash.com/photo-1655720035861-ba4fd21a598d?ixlib=rb
+        -1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80" alt="imagen recurso">
+      <a href="https://www.codecademy.com/">
+        <h3 class="resources_titulo">Codeacademy JS</h3>
+      </a>
+      <p class="resources_descripcion">"Increible recurso para aprender JS"</p>
+      <div class="resources--center_buttons">
+        <p class="counter_positive" id="countPositive3">0</p>
+        <button class="resources_button" id="buttonIncrese3">👍</button>
+        <p class="counter_negative" id="countNegative3">0</p>
+        <button class="resources_button" id="buttonNegative3">👎</button>
+      </div>
+    </div>
+  </div>
+	<script src="js/funcion_busqueda.js"></script>
+</body>
+
+</html>

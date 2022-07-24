@@ -1,0 +1,66 @@
+
+body, h1, h2, h3, p {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+a {
+  text-decoration: none;
+  color: #0f0f0f;
+}
+
+.wrapper {
+  inline-size: 1440px;
+  margin: 32px;
+}
+
+.buttom {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+  background-color: #3a0ca3;
+  padding: 8px;
+  border-radius: 4px;
+}
+
+.main_container {
+    height: 100vh; /* utiliza todo el view-port*/
+    background-color: black; /* ayuda a encontrar agujeros de css*/
+}
+
+.superior {
+    background-image: url(../img/background.png);
+    background-position: center;
+    height: 35.4%; /* golden ratio con container_cartas*/
+}
+
+.container_cartas {
+    /* height: 64.6%; /* golden ratio con superior */
+    height: auto;
+    padding: 4% 12% 0% 12%;
+    background-color: orange;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* tarjetas de 150px de ancho */
+    gap: 3rem;
+}
+
+.carta {
+    height: 100%;
+    background-color: white;
+    border-radius: 45px;
+    box-shadow: -3px 8px 18px -11px rgba(0,0,0,0.645);
+    transition: .04s ease-out;
+}
+
+.texto_carta {
+    padding: 20px;
+}
+
+
+.carta img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 45px 45px 0px 0px;
+}

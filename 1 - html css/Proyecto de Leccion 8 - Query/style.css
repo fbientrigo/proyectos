@@ -1,0 +1,178 @@
+body {
+  background-color: white;
+}
+
+.center {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  color: #05445E;
+}
+
+.container {
+  display: flex;
+}
+
+.containerButton {
+  width: 100%;
+  height: 30rem;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  justify-content: center;
+}
+
+.button {
+  text-decoration: none;
+  color: white;
+  padding: 1em;
+  background: #4361ee;
+  border-radius: 4px;
+  text-align: center;
+  text-transform: uppercase;
+  border: none;
+}
+
+
+
+.back {
+  color: #FF75D8;
+  text-decoration: none;
+  padding: .5em;
+  border-radius: 4px;
+}
+
+
+/* Formulario */
+
+h2 {
+  color: #4361ee;
+}
+
+.containerForm {
+  width: 30em;
+  margin-bottom: 1em;
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  justify-content: center;
+
+}
+
+.formContent {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-inline-size: 540px;
+  margin: auto;
+}
+
+.form label {
+  display: flex;
+  flex-direction: column;
+  font-size: 16px;
+  color: #4361ee;
+}
+
+.form input, .form textarea {
+  border: 2px solid #858c94;
+  border-radius: 8px;
+  padding-inline-end: 16px;
+  padding-inline-start: 16px;
+  padding-block-start: 12px;
+  padding-block-end: 12px;
+  margin-block-start: 8px;
+}
+
+/* botones iniciales */
+#botonContacto {
+    background: #05445E;
+}
+
+#botonSesion {
+    background: #189AB4;
+}
+
+/* Inicio */
+#topbar {
+    width: 100%;
+    background: white;
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 3px 24px 0px;
+    overflow: hidden;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+/* emojis */
+.emoji {
+    font-size: 4rem;
+}
+
+.emojisposicion {
+    position: absolute;
+    top: 8rem;
+}
+
+#emojiderecho{
+    right: 1rem;
+}
+
+/* Seccion de Cajas*/
+
+
+.centraremoji {
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+
+
+@media  (min-width: 800px) {
+    .horizontales {
+        display: inline-flex;
+        justify-content: center;
+        margin: 2rem;
+    }
+
+    .caja {
+        display: grid;
+        border: 1px solid black;
+        padding: 1rem;
+        margin: 0 1rem 0 1rem;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+@media (max-width: 799px) {
+    .containerButton {
+        padding: 0;
+        display: flex;
+        justify-content: center;
+    }
+
+    .horizontales {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        margin: 0rem;
+    }
+
+    .caja {
+        display: grid;
+        border: 1px solid black;
+        padding: 1rem;
+        margin: 1rem 0 1rem 0;
+        width: auto;
+        height: auto;
+    }
+}

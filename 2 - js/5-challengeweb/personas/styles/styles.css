@@ -1,0 +1,37 @@
+@import 'header.css';
+@import 'main.css';
+
+body, h1, h2, h3, p {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.wrapper {
+  inline-size: 1440px;
+  margin: 32px;
+}
+
+.buttom {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+  background-color: #3a0ca3;
+  padding: 8px;
+  border-radius: 4px;
+}
+
+.buttom:active {
+  padding: 7px;
+}
+
+.ellipsis {
+  overflow: hidden;
+}
+
+.ellipsis > * {
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

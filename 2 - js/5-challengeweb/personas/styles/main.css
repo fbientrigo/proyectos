@@ -1,0 +1,78 @@
+.main {
+  display: flex;
+  justify-content: center;
+  margin: 32px auto;
+}
+
+.main__container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: left;
+  gap: 30px;
+}
+  
+.card {
+  inline-size: 250px;
+  block-size: 250px;
+  margin: 0 0 32px 0;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  border: 1px solid lightgrey;
+  border-radius: 8px;
+  box-shadow: 5px 5px 10px #919191;
+  transition: 0.3s all ease-in-out;
+}
+
+.card:hover {
+  margin-top: -15px;
+}
+
+.card__userdata {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+}
+
+.card__userdata img {
+  width: 70px;
+}
+
+.data {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.data h2 {
+  font-weight: 400;
+}
+
+.card__hobbie{
+  overflow: hidden;
+}
+
+.card__hobbie h3 {
+  font-weight: 400;
+}
+
+
+.card__skills {
+  display: flex;
+  align-items: center;
+}
+
+.card__skills ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  list-style: none;
+  justify-content: flex-start;
+}
+
+.card__skills ul li::after {
+  content: ',';
+}
+

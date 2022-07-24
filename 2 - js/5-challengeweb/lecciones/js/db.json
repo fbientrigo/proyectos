@@ -1,0 +1,28 @@
+{
+  "lessons": [
+    {
+      "title": "Lección 33: Ciclos For & While",
+      "image": "./img/lesson-37.jpg"
+    },
+    {
+      "title": "Lección 34: Ciclos For & While parte 2",
+      "image": "./img/lesson-37.jpg"
+    },
+    {
+      "title": "Lección 35: Condicional Switch & funciones con JS",
+      "image": "./img/lesson-37.jpg"
+    },
+    {
+      "title": "Lección 36: Introducción a DOM con JS",
+      "image": "./img/lesson-37.jpg"
+    },
+    {
+      "title": "Lección 37: Repaso y planificación proyecto JS",
+      "image": "./img/lesson-37.jpg"
+    },
+    {
+      "title": "Lección 38: Repaso y planificación proyecto JS parte 2",
+      "image": "./img/lesson-37.jpg"
+    }
+  ]
+}

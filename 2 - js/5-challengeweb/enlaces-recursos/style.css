@@ -1,0 +1,145 @@
+* {
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  font-family:'Poppins', sans-serif;;
+}
+
+.header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.header_logo {
+  margin-top: 100px;
+}
+
+.header_button {
+  margin-top: 100px;
+  background-color: #1e96ff;
+  color: #fff;
+  padding: 10px 40px;
+  border: none;
+  border-bottom: 3px solid rgb(21, 70, 161);
+  border-radius: 25px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.searcher {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+.recursos--filter {
+  width: 36vw;
+  padding: 10px 10px;
+  border-radius: 25px;
+  border: 3px solid #d3d3d3;
+}
+
+.resources {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 30px;
+  margin-top: 10vh;
+  padding: 0% 20% 0% 20%;
+}
+
+.resources_card {
+  border-radius: 45px;
+  box-shadow: -3px 8px 22px -10px rgba(0,0,0,0.52);
+  -webkit-box-shadow: -3px 8px 22px -10px rgba(0,0,0,0.52);
+  -moz-box-shadow: -3px 8px 22px -10px rgba(0,0,0,0.52);
+  transition: .03s ease-out;
+}
+
+.resources_card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 45px 45px 0px 0px;
+}
+
+h3 , h2 {
+  text-align: center;
+  color: #0f0f0f;
+}
+
+p {
+  text-align: center;
+  padding: 10px;
+}
+
+a {
+  text-decoration: none;
+  color: #0f0f0f;
+}
+
+.resources--center_buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* esta clase filtra los elementos*/
+
+.filter {
+  visibility: hidden;
+  opacity:0;
+  order: 1;
+}
+
+.resources_button {
+  height: 30px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.counter_positive {
+  font-weight: 600;
+  color: #61d66b;
+}
+
+.counter_negative {
+  font-weight: 600;
+  color: #d66161;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1030px) {
+  .resources {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+}
+
+@media only screen and (min-width: 300px) and (max-width: 767px) {
+  .resources {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+
+  h2 {
+    font-size: 28px;
+  }
+  
+  .header {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .header_button {
+    margin-top: 10px;
+  }
+
+  .recursos--filter{
+    width:60vw;
+  }
+
+  .header_logo {
+    margin: 30px;
+  }
+}
