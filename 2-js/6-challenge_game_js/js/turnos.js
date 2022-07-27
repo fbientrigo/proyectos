@@ -10,14 +10,16 @@ const updateHP = () => {
   const player1HP = document.getElementById("vida-izquierdo");
   player1HP.innerText = izquierdo.getLifePoints();
   if (izquierdo.getLifePoints() <= 0) {
-    alert("El juego terminó, gana el perro");
+    player1HP.innerText = izquierdo.getLifePoints();
+    alert("El juego terminó, gana el jugador derecho");
     location.reload();
   }
 
   const player2HP = document.getElementById("vida-derecho");
   player2HP.innerText = derecho.getLifePoints();
   if (derecho.getLifePoints() <= 0) {
-    alert("El juego terminó, gana el gato");
+    player2HP.innerText = derecho.getLifePoints();
+    alert("El juego terminó, gana el jugador izquierdo");
     location.reload();
   }
 };
@@ -39,8 +41,13 @@ const cambiarTurno = (turno) => {
 
 // define funciones para poder atacar y defender
 //lado se refiere a quien lanza el ataque
-const funcionAtaque = (lado, damage) => {
+const funcionAtaque = (lado) => {
   let defender = lado == "derecho" ? izquierdo : derecho;
+  let atacante = lado == "izquierdo" ? izquierdo : derecho;
+
+  let damage = Math.ceil(atacante.getAttack() * Math.random());
+
+  // aqui puede escribirse un getType, para multiplicar
 
   defender.resistir(damage);
   updateHP();
@@ -65,6 +72,6 @@ const innitGame = () => {
   let dndIzquierdo = document.querySelector("#dnd-izquierdo");
   let mssIzquierdo = document.querySelector("#mss-izquierdo");
 
-  atkDerecho.addEventListener("click", ()=>funcionAtaque("derecho",10));
-  atkIzquierdo.addEventListener("click", ()=>funcionAtaque("izquierdo",10));
+  atkDerecho.addEventListener("click", ()=>funcionAtaque("derecho"));
+  atkIzquierdo.addEventListener("click", ()=>funcionAtaque("izquierdo"));
 }

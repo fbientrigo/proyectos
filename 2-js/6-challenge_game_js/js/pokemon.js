@@ -46,11 +46,6 @@ class Pokemon extends Ser {
     console.log(this.attackName,this.defenseName);
   };
 
-
-  atacar() {
-
-  }
-
   resistir(damage) {
     this.hp = this.hp - damage;
   }
