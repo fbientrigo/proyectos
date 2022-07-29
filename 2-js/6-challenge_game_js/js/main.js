@@ -21,7 +21,6 @@ derecho = new Personaje("Einstein", hp, attack, defense, "water", imgE);
 izquierdo.render("pokemonIzquierdo", "izquierdo");
 derecho.render("pokemonDerecho", "derecho");
 
-cambiarTurno(turno);
 window.onload = innitGame();
 
 

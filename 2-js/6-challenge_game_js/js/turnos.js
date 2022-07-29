@@ -27,8 +27,8 @@ const updateHP = () => {
 // Desactivar los botones
 const cambiarTurno = (turno) => {
   let nodes;
-  let desactivadorDerecho = (turno == "derecho");
-  let desactivadorIzquierdo = (turno == "izquierdo");
+  let desactivadorDerecho = (turno === "derecho");
+  let desactivadorIzquierdo = (turno === "izquierdo");
 
   nodes = document.getElementById("derecho").getElementsByTagName('*');
   for(let i = 0; i < nodes.length; i++){
@@ -39,6 +39,21 @@ const cambiarTurno = (turno) => {
     nodes[i].disabled = desactivadorIzquierdo; }
 }
 
+const loginfo = (lado) => {
+  let enemigo = lado == "derecho" ? izquierdo : derecho;
+  let player = lado == "izquierdo" ? izquierdo : derecho;
+
+  console.table(player);
+  console.table(enemigo);
+}
+
+const despuesDeTurno  = (lado) => {
+  //luego de cada turno se actualiza el hp y se cambia el turno
+  loginfo(lado);
+  updateHP();
+  cambiarTurno(lado);
+}
+
 // define funciones para poder atacar y defender
 //lado se refiere a quien lanza el ataque
 const funcionAtaque = (lado) => {
@@ -46,21 +61,70 @@ const funcionAtaque = (lado) => {
   let atacante = lado == "izquierdo" ? izquierdo : derecho;
 
   let damage = Math.ceil(atacante.getAttack() * Math.random());
+  //desactiva las protecciones propias
+  atacante.deactivateEsquivar();
+  atacante.deactivateShield();
 
-  // aqui puede escribirse un getType, para multiplicar
+  //chequea el escudo
+  if (defender.shield) {
+    atacante.resistir(damage * 1.4);
+    defender.deactivateShield();
+    console.log(`${defender.name} reflejó el ataque con su escudo al 140%`);
+    despuesDeTurno(lado);
+  } else if (defender.esquivar) {
+    console.log(`${defender.name} ha esquivado el ataque`)
+    defender.deactivateEsquivar
+    despuesDeTurno(lado);
+  } else {
+    // aqui puede escribirse un getType, para multiplicar
+    defender.resistir(damage);
+    despuesDeTurno(lado);
 
-  defender.resistir(damage);
-  updateHP();
+    console.log(
+      `Daño efectuado a ${defender.name}, vida actual: ${defender.hp}`
+    );
+  }
 
-  cambiarTurno(lado);
-
-  console.log(
-    `Daño efectuado a ${defender.name}, vida actual: ${defender.lifePoints}`
-  );
 };
 
+const funcionDefensa = (lado) => {
+  let defender = lado == "izquierdo" ? izquierdo : derecho;
+  let enemigo = lado == "derecho" ? izquierdo : derecho;
+  console.log(`${defender.name} se ha defendido, tiene un 40% de reflejar el siguiente ataque`);
+
+  if (Math.random() <= 0.4) {
+    defender.activateShield();
+    console.log(`el escudo de ${defender.name} se encuentra activado`)
+  } else if (Math.random() <= 0.2){
+    console.log(`${defender.name} se tropezó y se hizó daño`);
+    defender.resistir(10);
+  }
+  //desactiva escudo enemigo si no lo ha ataco
+  enemigo.deactivateShield();
+  enemigo.deactivateEsquivar();
+  despuesDeTurno(lado);
+}
+
+const funcionEsquivar = (lado) => {
+  let defender = lado == "izquierdo" ? izquierdo : derecho;
+  let enemigo = lado == "derecho" ? izquierdo : derecho;
+
+  console.log(`${defender.name} ha activado esquivar, 80% de probabilidad de funcionar`);
+  if (Math.random() <= 0.8) {
+    defender.activateEsquivar();
+  } else {
+    console.log(`${defender.name} se tropezó y se hizó daño`);
+    defender.resistir(10);
+  }
+  //desactiva escudo enemigo si no lo ha ataco
+  enemigo.deactivateShield();
+  enemigo.deactivateEsquivar();
+  despuesDeTurno(lado);
+}
 
 const innitGame = () => {
+
+  cambiarTurno(turno);
   console.log("Iniciando juego");
   //selecciona los elementos de cada lado
   // ids: atk-derecho, dnd-derecho, mss-derecho
@@ -73,5 +137,10 @@ const innitGame = () => {
   let mssIzquierdo = document.querySelector("#mss-izquierdo");
 
   atkDerecho.addEventListener("click", ()=>funcionAtaque("derecho"));
+  dndDerecho.addEventListener("click", ()=>funcionDefensa("derecho"))
+  mssDerecho.addEventListener("click", ()=>funcionEsquivar("derecho"));
+
   atkIzquierdo.addEventListener("click", ()=>funcionAtaque("izquierdo"));
+  dndIzquierdo.addEventListener("click", ()=>funcionDefensa("izquierdo"))
+  mssIzquierdo.addEventListener("click", ()=>funcionEsquivar("izquierdo"));
 }

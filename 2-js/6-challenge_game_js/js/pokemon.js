@@ -9,15 +9,40 @@ class Ser {
     this.hp = hp;
     this.attack = attack;
     this.defense = defense; /* ability to create shields*/
-    this.shield = 0;
+    this.shield = false;
+    this.esquivar = false;
   }
 
   getLifePoints() {
     return this.hp;
   }
   
+  resistir(damage) {
+    this.hp = this.hp - damage;
+  }
+
   getAttack() {
     return this.attack;
+  }
+
+  getShield() {
+    return this.shield;
+  }
+
+  activateShield() {
+    this.shield = true;
+  }
+
+  deactivateShield() {
+    this.shield = false;
+  }
+
+  activateEsquivar() {
+    this.esquivar = true;
+  }
+
+  deactivateEsquivar() {
+    this.esquivar = false;
   }
 
 }
@@ -46,9 +71,6 @@ class Pokemon extends Ser {
     console.log(this.attackName,this.defenseName);
   };
 
-  resistir(damage) {
-    this.hp = this.hp - damage;
-  }
 
 
 }
