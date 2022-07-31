@@ -10,13 +10,13 @@
 
 .pokemon-container {
     display: flex;
-    width: 500px;
+    width: var(--anchoPokemon);
 }
 
 .pokemon-imagen{
     display: flex;
     justify-content: center;
-    height: 400px;
+    height: 300px;
 }
 
 .pokemon-imagen img{

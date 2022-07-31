@@ -4,8 +4,13 @@
 // Inicia de manera random el primer turno (se puede cambiar por leer traits de velocidad)
 let turno = (Math.random() > 0.5) ? 'izquierdo' : 'derecho';
 
-//esta función actualiza puntos de vida
-// [ ] Reescribir
+//dictar lo que ocurre
+const logger = document.getElementById('log');
+
+const log = (text) => {
+  logger.textContent = text;
+}
+
 const updateHP = () => {
   const player1HP = document.getElementById("vida-izquierdo");
   player1HP.innerText = izquierdo.getLifePoints();
@@ -69,10 +74,10 @@ const funcionAtaque = (lado) => {
   if (defender.shield) {
     atacante.resistir(damage * 1.4);
     defender.deactivateShield();
-    console.log(`${defender.name} reflejó el ataque con su escudo al 140%`);
+    log(`${defender.name} reflejó el ataque con su escudo al 140%`);
     despuesDeTurno(lado);
   } else if (defender.esquivar) {
-    console.log(`${defender.name} ha esquivado el ataque`)
+    log(`${defender.name} ha esquivado el ataque`)
     defender.deactivateEsquivar
     despuesDeTurno(lado);
   } else {
@@ -80,7 +85,7 @@ const funcionAtaque = (lado) => {
     defender.resistir(damage);
     despuesDeTurno(lado);
 
-    console.log(
+    log(
       `Daño efectuado a ${defender.name}, vida actual: ${defender.hp}`
     );
   }
@@ -90,13 +95,13 @@ const funcionAtaque = (lado) => {
 const funcionDefensa = (lado) => {
   let defender = lado == "izquierdo" ? izquierdo : derecho;
   let enemigo = lado == "derecho" ? izquierdo : derecho;
-  console.log(`${defender.name} se ha defendido, tiene un 40% de reflejar el siguiente ataque`);
+  log(`${defender.name} se ha defendido, tiene un 40% de reflejar el siguiente ataque`);
 
   if (Math.random() <= 0.4) {
     defender.activateShield();
-    console.log(`el escudo de ${defender.name} se encuentra activado`)
+    log(`el escudo de ${defender.name} se encuentra activado`)
   } else if (Math.random() <= 0.2){
-    console.log(`${defender.name} se tropezó y se hizó daño`);
+    log(`${defender.name} se tropezó y se hizó daño`);
     defender.resistir(10);
   }
   //desactiva escudo enemigo si no lo ha ataco
@@ -109,11 +114,11 @@ const funcionEsquivar = (lado) => {
   let defender = lado == "izquierdo" ? izquierdo : derecho;
   let enemigo = lado == "derecho" ? izquierdo : derecho;
 
-  console.log(`${defender.name} ha activado esquivar, 80% de probabilidad de funcionar`);
+  log(`${defender.name} ha activado esquivar, 80% de probabilidad de funcionar`);
   if (Math.random() <= 0.8) {
     defender.activateEsquivar();
   } else {
-    console.log(`${defender.name} se tropezó y se hizó daño`);
+    log(`${defender.name} se tropezó y se hizó daño`);
     defender.resistir(10);
   }
   //desactiva escudo enemigo si no lo ha ataco
