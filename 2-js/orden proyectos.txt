@@ -1,0 +1,57 @@
+10 julio
+	challenge_js/views
+
+12 julio
+	challenge_game_js
+
+
+14 julio
+@here mejorar el proyecto https://github.com/larnu-bootcamp/challenge_js.
+- mejorar estilos
+- mejorar js
+- nombre rama: enhancement/<tu-nombre>
+
+15 julio / clase 25
+	https://larnu-dev-upy5mhs63a-rj.a.run.app/api/v1/categories
+en base a la respuesta, crear una tarjeta para cada elemento category (tipo a las tarjetas que tenemos en larnu.app) y popular el html.
+
+Deberíamos tener 23 tarjetas en nuestro html creadas desde JS.
+
+- nombre: api_js
+
+
+Se recomienda por aqui entender:
+- tipos de peticiones HTTP: (en especial get, post, put, patch, delete)
+- funciones flecha en JS 
+
+18 julio / clase 26
+desafío API CLIMA  
+- deben crear una app que permita obtener el clima según país y región
+- urls:
+ diseño: https://miro.com/app/board/uXjVOlIkJ4E=/?share_link_id=630838495356
+api clima: 
+ - https://openweathermap.org/current
+- https://openweathermap.org/api/geocoding-api
+
+deben crearse una cuenta y obtener api_key
+
+el código les puede servir como base para iniciar la app.
+
+palabra clave: api_weather_js
+
+
+19 julio 
+
+miro: https://miro.com/app/board/uXjVOkgS6cI=/?share_link_id=150705101334
+El proyecto consta de crear una app que permita ver el perfil de los usuarios.
+La primera vista pide email y discord-id la cual tienen que pasarla como header a la url
+tiene dos metodos GET y PATCH
+nombre clave: api_profile_js
+
+
+La llamda a la API es:
+curl --location --request GET 'https://larnu-api-upy5mhs63a-rj.a.run.app/api/v1/bootcamp/profile' \
+--header 'Email: jose.zunigahenriquez@gmail.com' \
+--header 'Discord-id: 310544245155168256'
+
+-------- 24 julio corte
