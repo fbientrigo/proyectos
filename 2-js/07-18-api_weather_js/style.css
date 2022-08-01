@@ -1,0 +1,183 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;400;700&display=swap');
+
+:root {
+  --fondo: #fbf9ff;
+  --secundario: #b3b7ee;
+  --strong: #000807;
+  --primario: #9395d3;
+  --sombra: #a2a3bb;
+  --texto: #fbf9ff;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Lato', sans-serif;
+}
+
+body {
+  font-family: 'Raleway', sans-serif;
+  background: var(--fondo) ;
+  color: var(--texto);
+  font-size: 1.2rem;
+}
+
+main {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 3rem ;
+  height:80vh; 
+  text-align: center;
+  padding: 2rem;
+}
+
+h2 {
+  padding: 1rem;
+}
+
+form {
+  z-index: 10;
+  width: 39vw; 
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 15px ; 
+  font-size: 1.5rem;
+  text-align: center;
+  border: 2px solid var(--secundario);
+  border-radius: 7px;
+}
+
+
+
+.search {
+  width: 100%;
+  border: none;
+  background-color: var(--fondo);
+  padding: 0 15px;
+  font-size: 1.1rem;
+}
+
+.search:focus {
+  outline: none;
+}
+
+.card {
+  box-shadow: 0 1.4rem 1.4rem var(--sombra);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 30px;
+  width: 40vw;
+  background-color: var(--secundario);
+}
+
+@media screen and (max-width: 830px) {
+  form {
+    width: 100%;
+  }
+
+  .card {
+    width: 100%;
+  }
+}
+
+.card__background {
+  border-radius: 30px 30px 0px 0px ;
+  padding: 10px;
+}
+
+.card__body{
+  width: 70%;
+  height: 42vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.card__city {
+  padding-top: 4rem;
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--texto);
+}
+
+.card__date {
+  color: var(--texto);
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.card__temperature {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  top: 3rem;
+  width: 100%;
+}
+
+.card__temp {
+  font-size: 4rem;
+  font-weight: 700;
+  color: var(--texto);
+}
+
+.temp__icon {
+  font-size: 4rem;
+  color: var(--primario)
+}
+
+
+
+
+/* animacion de nieve ya que tengo frio */
+.hero {
+  height: 100vh;
+	position: relative;
+	overflow: hidden;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+}
+
+.snow {
+	position: absolute;
+	min-width: 100vw;
+	min-height: 100vh;
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+}
+
+.snow .svg {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
+
+#snow-top-layer {
+	will-change: transform;
+	transform: translateY(-768px);
+	animation: fall 22.5s infinite linear;
+}
+
+#snow-bottom-layer {
+	will-change: transform;
+	transform: translateY(-768px);
+	animation: fall 45s infinite linear;
+}
+
+@keyframes fall {
+	
+	100% {
+		transform: translateY(0);
+	}
+	
+}

@@ -1,8 +1,13 @@
-const div = document.querySelector('.card_container');
 const url = 'https://larnu-dev-upy5mhs63a-rj.a.run.app/api/v1/categories';
+const div = document.querySelector('.card_container');
 
-function getResources() {
+function llamarApi() {
+  //posee una promesa
   return new Promise(function (resolve, reject) {
+    //dentro la funcion asincrona que se ha de esperar
+    // donde resolve y reject son reemplazados por fnciones animas
+
+    // axios es tambien una promesa, de donde extraemos la respuesta o error
     axios.get(url)
       .then(function (response) {
         resolve(response.data.communityCategories)
@@ -13,9 +18,9 @@ function getResources() {
   });
 }
 
-async function challenge() {
-
-  const categories = await getResources()
+async function main() {
+  // se usa await para esperar la promesa
+  const categories = await llamarApi()
   categories.forEach((data) => {
     div.innerHTML += `
     <div class="card">
@@ -37,4 +42,4 @@ async function challenge() {
   });
 }
 
-challenge()
+main()
