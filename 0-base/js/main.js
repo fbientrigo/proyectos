@@ -5,5 +5,5 @@
 
 */
 
-padre = document.getElementById("padre");
-padre.innerHTML = "conf"
+padre = document.getElementById("parent");
+padre.innerHTML = "El JavaScript funciona correctamente"

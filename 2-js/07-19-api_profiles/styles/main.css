@@ -1,0 +1,47 @@
+/*base*/
+body {
+    
+}
+
+.parent {
+    width: 100vh;
+    height: 100vh;
+}
+
+
+
+
+/*elementos rapidos*/
+.box {
+    background-color: blue;
+    width: 40px;
+    height: 40px;
+    margin: 2rem;
+}
+
+.container {
+    width: 100px;
+    height: 100px;
+    margin: 1rem;
+    border: 1px solid;
+}
+ 
+/*keywords*/
+.row-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.column-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.center-flex {
+    display: flex;
+    justify-content: center; /*horizontal*/
+    align-items: center; /*vertical*/
+}
